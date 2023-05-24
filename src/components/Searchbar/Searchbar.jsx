@@ -18,11 +18,11 @@ class Searchbar extends Component {
     e.preventDefault();
     if (this.state.inputValue.trim() === '') {
       return (
-        toast.warn('Sorry you need to enter something'),
+        toast.warn('Sorry you need to enter something',
         {
           theme: 'dark',
           position: 'top-center',
-        }
+        })
       );
     }
     this.props.onSubmit(this.state.inputValue);
@@ -33,8 +33,8 @@ class Searchbar extends Component {
     return (
       <header className={styles.searchbar}>
         <form className={styles.form} onSubmit={this.handleSubmit}>
-          <button type="submit" className={styles.form - button}>
-            <span className={styles.button - labe}>Search</span>
+          <button type="submit" className={styles.formButton}>
+            <span className={styles.buttonLabel}>Search</span>
           </button>
 
           <input
@@ -42,8 +42,8 @@ class Searchbar extends Component {
             name="input"
             className={styles.input}
             type="text"
-            autocomplete="off"
-            autofocus
+            autoComplete="off"
+            autoFocus
             placeholder="Search images and photos"
           />
         </form>
