@@ -12,7 +12,7 @@ componentWillUnmount(){
 window.removeEventListener('keydown', this.props.onKeyDown)
 }
   render() {
-    const {onBackdrop, children} = this.props
+    const {children} = this.props
     return (
       <div className={styles.overlay}>
         <div className={styles.modal}>

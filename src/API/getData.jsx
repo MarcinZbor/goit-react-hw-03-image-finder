@@ -5,8 +5,8 @@ async function getPicturesData(keyWord, page) {
   const searchParams = new URLSearchParams({
     key: API_KEY,
     q: keyWord,
-    image_type: photo,
-    orientation: horizontal,
+    image_type: "photo",
+    orientation: "horizontal",
     safesearch: true,
     page: page,
     per_page: 12,
