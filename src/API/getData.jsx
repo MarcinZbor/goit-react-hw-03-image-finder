@@ -12,7 +12,9 @@ async function getPicturesData(keyWord, page) {
     per_page: 12,
   });
 
-  return await axios.get('https://pixabay.com/api/');
+  return await axios.get(`https://pixabay.com/api/?${searchParams}`);
 }
 
-export default getPicturesData;
+
+export default getPicturesData
+
