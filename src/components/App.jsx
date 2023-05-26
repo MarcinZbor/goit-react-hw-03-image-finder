@@ -45,6 +45,8 @@ export class App extends React.Component {
     }
   };
 
+  // Zamknięcie Modala background
+
   handleBackdrop = event => {
     if (event.currentTarget === event.target) {
       this.setState({ isModal: false });
