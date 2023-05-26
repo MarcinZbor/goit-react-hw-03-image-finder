@@ -4,22 +4,29 @@ import styles from './Modal.module.css';
 
 class Modal extends React.Component {
   componentDidMount() {
-    window.addEventListener('keydown', this.props.onKeyDown);
+    window.addEventListener('keydown', this.handleKeyDown);
   }
   componentWillUnmount() {
-    window.removeEventListener('keydown', this.props.onKeyDown);
+    window.removeEventListener('keydown', this.handleKeyDown);
   }
+
+
+handleBackdropClick = e => {
+  if (e.target === e.currentTarget){
+    this.props.onModalClose()
+  }
+}
 
   handleKeyDown = event => {
     if (event.key === "Escape"){
-      this.props.onKeyDown()
+      this.props.onModalClose()
     }
   }
   render() {
-    const { onBackdrop, children } = this.props;
+    const { handleBackdropClick, children } = this.props;
 
     return (
-      <div className={styles.overlay} onClick={onBackdrop}>
+      <div className={styles.overlay} onClick={this.handleBackdropClick}>
         <div className={styles.modal}>
           <img src={children} alt={children} />
         </div>
@@ -29,8 +36,7 @@ class Modal extends React.Component {
 }
 
 Modal.propTypes = {
-  // onKeyDown: PropTypes.func.isRequired,
-  onBackdrop: PropTypes.func.isRequired,
+  onModalClose: PropTypes.func.isRequired,
   children: PropTypes.node.isRequired,
 };
 

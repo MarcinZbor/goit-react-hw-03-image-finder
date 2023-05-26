@@ -7,10 +7,7 @@ import Button from './Button/Button';
 import Loader from './Loader/Loader';
 import Modal from './Modal/Modal';
 import getPicturesData from 'API/getData';
-import styles from "./App.module.css"
-
-
-
+import styles from './App.module.css';
 
 export class App extends React.Component {
   state = {
@@ -18,7 +15,7 @@ export class App extends React.Component {
     picturesData: [],
     page: 1,
     totalPages: 1,
-    loading: false, 
+    loading: false,
     isModal: false,
     clickedImg: '',
   };
@@ -39,18 +36,8 @@ export class App extends React.Component {
     this.setState({ isModal: true, clickedImg: url });
   };
 
-  handleKeyDown = () => {
-    {
-      this.setState({ isModal: false });
-    }
-  };
-
-  
-
-  handleBackdrop = event => {
-    if (event.currentTarget === event.target) {
-      this.setState({ isModal: false });
-    }
+  onModalClose = () => {
+    this.setState({ isModal: false });
   };
 
   componentDidUpdate(prevProps, prevState) {
@@ -107,10 +94,7 @@ export class App extends React.Component {
         )}
         <ToastContainer autoClose={3000} />
         {this.state.isModal && (
-          <Modal
-            onBackdrop={this.handleBackdrop}
-            onKeyDown={this.handleKeyDown}
-          >
+          <Modal onModalClose={this.onModalClose}>
             {this.state.clickedImg}
           </Modal>
         )}
