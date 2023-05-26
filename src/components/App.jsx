@@ -39,13 +39,13 @@ export class App extends React.Component {
     this.setState({ isModal: true, clickedImg: url });
   };
 
-  handleKeyDown = event => {
-    if (event.key === 'Escape') {
+  handleKeyDown = () => {
+    {
       this.setState({ isModal: false });
     }
   };
 
-  // Zamknięcie Modala background
+  
 
   handleBackdrop = event => {
     if (event.currentTarget === event.target) {

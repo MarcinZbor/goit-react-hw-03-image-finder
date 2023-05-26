@@ -10,6 +10,11 @@ class Modal extends React.Component {
     window.removeEventListener('keydown', this.props.onKeyDown);
   }
 
+  handleKeyDown = event => {
+    if (event.key === "Escape"){
+      this.props.onKeyDown()
+    }
+  }
   render() {
     const { onBackdrop, children } = this.props;
 
@@ -24,7 +29,7 @@ class Modal extends React.Component {
 }
 
 Modal.propTypes = {
-  onKeyDown: PropTypes.func.isRequired,
+  // onKeyDown: PropTypes.func.isRequired,
   onBackdrop: PropTypes.func.isRequired,
   children: PropTypes.node.isRequired,
 };
