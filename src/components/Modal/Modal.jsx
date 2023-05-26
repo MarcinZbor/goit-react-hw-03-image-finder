@@ -23,7 +23,7 @@ handleBackdropClick = e => {
     }
   }
   render() {
-    const { handleBackdropClick, children } = this.props;
+    const {children } = this.props;
 
     return (
       <div className={styles.overlay} onClick={this.handleBackdropClick}>
