@@ -1,1 +1,1 @@
-<h1>Image finder </h1>
+<h1>Image finder :sunny:</h1>
