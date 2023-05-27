@@ -1,4 +1,10 @@
 <h1>Image finder :sunny:</h1>
 
-Find Your image using library Pixabys.
-In this project I also using JS library Prop-Types, Tostyfi and React-Loader-Spinner
+<ul>Find Your image. In this project I was using library: </ul>
+
+<li>Pixabys </li>
+<li> JS library Prop-Types </li> 
+<li>Tostyfi </li>
+<li>React-Loader-Spinner </li>
+
+
